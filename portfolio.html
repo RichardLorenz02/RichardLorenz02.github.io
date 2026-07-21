@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons (optional, nice touch) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+<style>
+  :root {
+    --accent: #3B82F6;
+    --accent-dark: #1D4ED8;
+  }
+
+  body {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+     background:#f8fafc;
+    transition: background-color 0.5s ease;
+  }
+
+  /* ---- Navbar ---- */
+  .navbar-brand {
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  .nav-link {
+    position: relative;
+    margin: 0 8px;
+     color: #ffffff !important;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 3px;
+    background: #FFD166;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  .nav-link:hover {
+    color: #FFD166 !important;
+}
+
+.nav-link.active {
+    color: #FFD166 !important;
+}
+
+  /* ---- Hero ---- */
+  .hero {
+    background:linear-gradient(135deg,#3B82F6,#1D4ED8,#1E40AF);
+    color: #fefdfd;
+    padding: 100px 0 80px;
+  }
+
+  .hero h1 {
+    font-weight: 700;
+  }
+
+  /* ---- Portfolio Section ---- */
+  #portfolio {
+    padding: 80px 0;
+    transition: background-color 0.5s ease;
+  }
+
+  .project-card {
+    border: none;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    height: 100%;
+}
+
+.project-card img{
+    transition: transform 0.35s ease;
+}
+
+.project-card:hover{
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.18);
+}
+
+.project-card:hover img{
+    transform: scale(1.05);
+}
+
+  .project-card img {
+    transition:.4s;
+    height: 220px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .project-title {
+    cursor: pointer;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .project-title:hover {
+    color: var(--accent);
+  }
+
+  .btn-accent {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    font-weight:600;
+    transition:.3s;
+    color: #fff;
+  }
+
+  .btn-accent:hover {
+    background:#1D4ED8;
+    transform:translateY(-2px);
+  }
+
+  /* ---- Contact Section ---- */
+  #contact {
+    padding: 80px 0;
+    background-color: #ffffff;
+  }
+
+  .contact-form {
+    max-width: 650px;
+    margin: 0 auto;
+    background: #f8f9fb;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  }
+
+  footer {
+    background-color: #1e1e2f;
+    color: #cfcfe8;
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  section {
+    scroll-margin-top: 70px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm"
+     style="background:#1D4ED8;">
+  <div class="container">
+    <a class="navbar-brand" href="#home">Richard Lorenz Perez</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header id="home" class="hero text-center" style="margin-top:56px;">
+  <div class="container">
+    <h1 class="display-4">Hi, I'm Richard Lorenz Perez</h1>
+    <p class="lead">BS Computer Science Student.</p>
+    <a href="#portfolio" class="btn btn-light btn-lg mt-3 fw-semibold">View My Work</a>
+  </div>
+</header>
+
+<!-- ================= PORTFOLIO ================= -->
+<section id="portfolio">
+  <div class="container">
+    <h2 class="text-center mb-2">My Projects</h2>
+    <p class="text-center text-muted mb-5">Here are some of my academic and personal projects.</p>
+
+    <div class="row g-4">
+
+      <!-- Project 1 -->
+      <div class="col-md-4">
+        <div class="card project-card">
+          <img src="IMAGES/project1.png" alt="project1">
+          <div class="card-body">
+            <h5 class="card-title project-title" data-color="#e6f0ff">Focus-Pon</h5>
+            <p class="card-text">It is a gamified productivity app combining a focus timer, task manager, and gacha rewards system.</p>
+            <button type="button" class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#projectModal1">
+              Details
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="col-md-4">
+        <div class="card project-card">
+          <img src="https://placehold.co/600x400/00b894/ffffff?text=Project+Two" alt="Project Two">
+          <div class="card-body">
+            <h5 class="card-title project-title" data-color="#e6fff2">Recipe Finder App</h5>
+            <p class="card-text">A web app that lets users search recipes by ingredients they already have at home.</p>
+            <button type="button" class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#projectModal2">
+              Details
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="col-md-4">
+        <div class="card project-card">
+          <img src="https://placehold.co/600x400/e17055/ffffff?text=Project+Three" alt="Project Three">
+          <div class="card-body">
+            <h5 class="card-title project-title" data-color="#fff1e6">Personal Finance Tracker</h5>
+            <p class="card-text">A budgeting tool that visualizes spending habits with interactive charts and graphs.</p>
+            <button type="button" class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#projectModal3">
+              Details
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="container">
+    <h2 class="text-center mb-2">Get In Touch</h2>
+    <p class="text-center text-muted mb-5">Have a project in mind? Send me a message below.</p>
+
+    <form class="contact-form" id="contactForm">
+
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Your full name" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+      </div>
+      <div class="mb-3">
+        <label for="subject" class="form-label">Subject</label>
+        <input type="text" class="form-control" id="subject" name="subject" placeholder="What's this about?" required>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+      </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-accent btn-lg">Send Message</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <p class="mb-0">&copy; 2026 Richard Lorenz Perez. All rights reserved.</p>
+</footer>
+
+<!-- ================= MODALS ================= -->
+
+<!-- Modal 1 -->
+<div class="modal fade" id="projectModal1" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Focus-Pon</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="IMAGES/project1.png" class="img-fluid rounded mb-3">
+        <p><strong>Tools Used:</strong> Figma (UI/UX Design)</p>
+        <p>Focus-Pon includes a built-in focus timer that helps users stay productive by managing their work sessions efficiently. It also features a task manager for organizing daily activities and tracking progress. To keep users motivated, the app incorporates a gacha reward system that lets them earn rewards after completing tasks. In addition, the app showcases user testimonials to highlight positive experiences and includes a contact section with an email address, phone number, and a contact button for users who wish to reach the team.</p>
+        <p><strong>Goal:</strong><br>
+        The project aims to motivate users to build better study and work habits by combining productivity tools with fun game-inspired rewards.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2 -->
+<div class="modal fade" id="projectModal2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Recipe Finder App</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://placehold.co/600x400/00b894/ffffff?text=Project+Two" class="img-fluid rounded mb-3" alt="Project Two">
+        <p><strong>Tech Stack:</strong> Vue.js, Spoonacular API, Firebase</p>
+        <p>Users enter ingredients they have on hand, and the app suggests matching recipes with instructions, prep time, and nutritional information. Includes saved favorites and a weekly meal planner.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="modal fade" id="projectModal3" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Personal Finance Tracker</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://placehold.co/600x400/e17055/ffffff?text=Project+Three" class="img-fluid rounded mb-3" alt="Project Three">
+        <p><strong>Tech Stack:</strong> Angular, Express, PostgreSQL, D3.js</p>
+        <p>A personal budgeting app that connects to bank statement CSV exports, categorizes transactions automatically, and displays monthly spending trends through interactive charts.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS Bundle (includes Popper, needed for modals) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+emailjs.init({
+    publicKey: "jvwvaO-l3Ga_vZXOw"
+});
+
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    emailjs.sendForm(
+        "service_22vp4zw",
+        "template_8hujswp",
+        this
+    )
+    .then(() => {
+
+        window.location.href = "thankyou.html";
+
+    })
+    .catch((error) => {
+
+        alert("Failed to send message.");
+        console.error(error);
+
+    });
+
+});
+</script>
+
+</body>
+</html>
