@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Portfolio</title>
@@ -11,155 +12,478 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
 <style>
-  :root {
-    --accent: #3B82F6;
-    --accent-dark: #1D4ED8;
-  }
-
-  body {
-    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-     background:#f8fafc;
-    transition: background-color 0.5s ease;
-  }
-
-  /* ---- Navbar ---- */
-  .navbar-brand {
-    font-weight: 700;
-    letter-spacing: 2px;
-  }
-
-  .nav-link {
-    position: relative;
-    margin: 0 8px;
-     color: #ffffff !important;
-    font-weight: 600;
-    font-size: 1.05rem;
-    transition: color 0.3s ease;
-  }
-
-  .nav-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0%;
-    height: 3px;
-    background: #FFD166;
-    transition: width 0.3s ease;
-  }
-
-  .nav-link:hover::after {
-    width: 100%;
-  }
-  .nav-link:hover {
-    color: #FFD166 !important;
+:root{
+    --accent: #F5F5F5;
+    --accent-dark: #CFCFCF;
+    --glass:rgba(255,255,255,.12);
+    --glass-border:rgba(255,255,255,.18);
 }
 
-.nav-link.active {
-    color: #FFD166 !important;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-  /* ---- Hero ---- */
-  .hero {
-    background:linear-gradient(135deg,#3B82F6,#1D4ED8,#1E40AF);
-    color: #fefdfd;
-    padding: 100px 0 80px;
-  }
+html{
+    scroll-behavior:smooth;
+}
 
-  .hero h1 {
-    font-weight: 700;
-  }
+body{
+    font-family:'Manrope',sans-serif;
+    background:#050505;
+    color:white;
+}
 
-  /* ---- Portfolio Section ---- */
-  #portfolio {
-    padding: 80px 0;
-    transition: background-color 0.5s ease;
-  }
+/* ================= NAVBAR ================= */
 
-  .project-card {
+.navbar{
+    background:rgba(12,17,29,.65)!important;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    transition:.35s;
+}
+
+.navbar-brand{
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.nav-link{
+    color:#fff!important;
+    margin:0 10px;
+    font-weight:600;
+    position:relative;
+}
+
+.nav-link::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:#fff;
+    transition:.3s;
+}
+
+.nav-link:hover::after{
+    width:100%;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+
+   background:
+linear-gradient(rgba(0,0,0,.58),rgba(0,0,0,.68)),
+url("IMAGES/background.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.hero::after{
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.75),
+        rgba(0,0,0,.20)
+    );
+}
+
+.hero .container{
+    position:relative;
+    z-index:2;
+}
+
+/* ================= GLASS CARD ================= */
+
+.glass-card{
+    width: 800px;
+    max-width: 95%;
+    padding: 40px;
+    text-align: center;
+
+    /* Almost invisible background */
+    background: transparent;
+
     border: none;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-    height: 100%;
+
+    box-shadow: none;
+
+    animation: fadeUp .8s ease;
 }
 
-.project-card img{
-    transition: transform 0.35s ease;
+.glass-card h1{
+    font-size: clamp(3.5rem,8vw,6rem);
+    font-weight: 700;
+    line-height: .95;
+    letter-spacing: -3px;
+
+    color: #fff;
+
+    text-shadow: 0 8px 30px rgba(0,0,0,.45);
+
+    margin-bottom: 25px;
+}
+
+.glass-card p{
+
+    max-width: 650px;
+
+    margin: auto;
+
+    margin-bottom: 35px;
+
+    font-size: 1.1rem;
+
+    color: rgba(255,255,255,.72);
+
+    line-height: 1.8;
+
+    text-shadow: 0 2px 12px rgba(0,0,0,.45);
+
+}
+
+.btn-accent{
+
+    background: rgba(255,255,255,.06);
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,.18);
+
+    border-radius: 16px;
+
+    padding: 14px 30px;
+
+    transition: .35s;
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,.08);
+
+}
+
+.btn-accent:hover{
+
+    background: rgba(255,255,255,.12);
+
+    color: white;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 30px rgba(255,255,255,.18);
+
+}
+
+/* ================= PORTFOLIO ================= */
+
+#portfolio{
+    padding:90px 0;
+
+   background:
+linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.72)),
+url("IMAGES/background.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.project-card{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.35s;
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
 }
 
 .project-card:hover{
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 18px 35px rgba(0,0,0,0.18);
+    transform:translateY(-10px);
+    box-shadow:0 18px 35px rgba(0,0,0,.28);
+}
+
+.project-card img{
+    height:220px;
+    object-fit:cover;
+    transition:.35s;
 }
 
 .project-card:hover img{
-    transform: scale(1.05);
+    transform:scale(1.04);
 }
 
-  .project-card img {
-    transition:.4s;
-    height: 220px;
-    object-fit: cover;
-    width: 100%;
-  }
+.card-body{
+    color:white;
+}
 
-  .project-title {
-    cursor: pointer;
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
 
-  .project-title:hover {
-    color: var(--accent);
-  }
+/* ================= CONTACT ================= */
 
-  .btn-accent {
-    background-color: var(--accent);
-    border-color: var(--accent);
+#contact{
+    padding:90px 0;
+
+    background:
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+url("IMAGES/background.png");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.contact-form{
+
+    max-width:700px;
+    margin:auto;
+    padding:50px;
+
+    background:rgba(20,20,20,.82);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+}
+
+.form-control{
+    background:#0f172a;
+    border:1px solid #334155;
+    color:white;
+}
+
+.form-control{
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#F5F5F5;
+
+    border-radius:14px;
+
+    padding:15px 18px;
+
+}
+
+.form-control:focus{
+
+    background:rgba(255,255,255,.05);
+
+    border-color:rgba(255,255,255,.20);
+
+    color:white;
+
+    box-shadow:none;
+
+}
+
+.form-control::placeholder{
+
+    color:#8F8F8F;
+
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    position: relative;
+
+    padding: 35px 0;
+
+    background:
+        linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.82)),
+        url("IMAGES/background.png");
+
+    background-size: cover;
+    background-position: center;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+
+}
+
+footer::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:rgba(255,255,255,.02);
+
+}
+
+footer .container{
+
+    position:relative;
+    z-index:2;
+
+}
+
+footer p{
+
+    margin:0;
+
+    color:rgba(255,255,255,.70);
+
+    font-size:.95rem;
+
+    letter-spacing:.3px;
+
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+/* ================= TEXT VISIBILITY FIX ================= */
+
+/* Section Titles */
+h1, h2, h3, h4, h5, h6{
+    color:#ffffff;
+    font-weight:700;
+}
+
+/* Paragraphs */
+p{
+    color:#e5e7eb;
+}
+
+/* Bootstrap muted text */
+.text-muted{
+    color:#cbd5e1 !important;
+}
+
+/* Card Text */
+.card-text{
+    color:#d1d5db;
+}
+
+/* Project Titles */
+.project-title{
+    color:#ffffff;
+}
+
+/* Contact Section Labels */
+label{
+
+    color:#FFFFFF;
+
     font-weight:600;
-    transition:.3s;
-    color: #fff;
-  }
 
-  .btn-accent:hover {
-    background:#1D4ED8;
-    transform:translateY(-2px);
-  }
+    margin-bottom:8px;
 
-  /* ---- Contact Section ---- */
-  #contact {
-    padding: 80px 0;
-    background-color: #ffffff;
-  }
+}
 
-  .contact-form {
-    max-width: 650px;
-    margin: 0 auto;
-    background: #f8f9fb;
-    padding: 40px;
-    border-radius: 14px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-  }
+/* Input Text */
+.form-control{
+    color:#ffffff;
+}
 
-  footer {
-    background-color: #1e1e2f;
-    color: #cfcfe8;
-    padding: 25px 0;
-    text-align: center;
-  }
+/* Placeholder Text */
+.form-control::placeholder{
+    color:#94a3b8;
+}
 
-  section {
-    scroll-margin-top: 70px;
-  }
+/* Modal */
+.modal-content{
+
+    background:rgba(18,18,18,.95);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    color:white;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+}
+
+.modal-header,
+.modal-footer{
+
+    border-color:rgba(255,255,255,.08);
+
+    background:transparent;
+
+}
+
+.modal-body{
+
+    color:rgba(255,255,255,.78);
+
+}
+
+.modal-title{
+
+    color:white;
+
+    font-weight:700;
+
+}
+
+.btn-close{
+
+    filter:invert(1);
+
+}
+.modal-backdrop.show{
+
+    opacity:.82;
+
+}
+/* Close Button */
+.btn-close{
+    filter: invert(1);
+}
+
+/* Portfolio & Contact Heading */
+#portfolio h2,
+#contact h2{
+    color:#ffffff;
+}
+
+/* Portfolio Description */
+#portfolio p,
+#contact p{
+    color:#d1d5db;
+}
+
+/* Footer */
+footer p{
+    color:#cbd5e1;
+}
 </style>
-</head>
-<body>
+
 
 <!-- ================= NAVBAR ================= -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm"
-     style="background:#1D4ED8;">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
     <a class="navbar-brand" href="#home">Richard Lorenz Perez</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
@@ -177,10 +501,15 @@
 
 <!-- ================= HERO ================= -->
 <header id="home" class="hero text-center" style="margin-top:56px;">
-  <div class="container">
-    <h1 class="display-4">Hi, I'm Richard Lorenz Perez</h1>
-    <p class="lead">BS Computer Science Student.</p>
-    <a href="#portfolio" class="btn btn-light btn-lg mt-3 fw-semibold">View My Work</a>
+  <div class="container text-center">
+    <div class="glass-card">
+    <div class="hero-badge">
+            BS Computer Science Student
+        </div>
+        <h1>Hi, I'm<br>Richard Lorenz Perez</h1>
+   <a href="#portfolio" class="btn btn-accent">
+            View My Work
+        </a>
   </div>
 </header>
 
@@ -188,7 +517,7 @@
 <section id="portfolio">
   <div class="container">
     <h2 class="text-center mb-2">My Projects</h2>
-    <p class="text-center text-muted mb-5">Here are some of my academic and personal projects.</p>
+    <p class="text-center mb-5" style="color:#d1d5db;">Here are some of my academic and personal projects.</p>
 
     <div class="row g-4">
 
@@ -271,7 +600,20 @@
 
 <!-- ================= FOOTER ================= -->
 <footer>
-  <p class="mb-0">&copy; 2026 Richard Lorenz Perez. All rights reserved.</p>
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+        <p>&copy; 2026 Richard Lorenz Perez. All rights reserved.</p>
+        <div class="d-flex gap-3">
+            <a href="#" class="footer-icon">
+                <i class="bi bi-github"></i>
+            </a>
+            <a href="#" class="footer-icon">
+                <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="#" class="footer-icon">
+                <i class="bi bi-envelope-fill"></i>
+            </a>
+        </div>
+    </div>
 </footer>
 
 <!-- ================= MODALS ================= -->
@@ -293,7 +635,7 @@
         </p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-accent" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -313,7 +655,7 @@
         <p>Users enter ingredients they have on hand, and the app suggests matching recipes with instructions, prep time, and nutritional information. Includes saved favorites and a weekly meal planner.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-accent" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -333,7 +675,7 @@
         <p>A personal budgeting app that connects to bank statement CSV exports, categorizes transactions automatically, and displays monthly spending trends through interactive charts.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-accent" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
