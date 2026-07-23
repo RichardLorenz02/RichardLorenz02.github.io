@@ -33,6 +33,7 @@ body{
     font-family:'Manrope',sans-serif;
     background:#050505;
     color:white;
+    transition: background-color .5s ease;
 }
 
 /* ================= NAVBAR ================= */
@@ -239,7 +240,7 @@ url("IMAGES/background.jpg");
 
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-repeat: no-repeat;
 }
 
@@ -583,7 +584,7 @@ footer p{
       <!-- Project 1 -->
       <div class="col-md-4">
         <div class="card project-card">
-          <img src="IMAGES/project1.png" alt="project1">
+          <img src="IMAGES/project1.png" alt="Project 1" loading="lazy" decoding="async">
           <div class="card-body">
            <h5 class="card-title project-title" data-color="#050505">Focus-Pon</h5>
             <p class="card-text">It is a gamified productivity app combining a focus timer, task manager, and gacha rewards system.</p>
@@ -597,10 +598,10 @@ footer p{
       <!-- Project 2 -->
       <div class="col-md-4">
         <div class="card project-card">
-          <img src="https://placehold.co/600x400/00b894/ffffff?text=Project+Two" alt="Project Two">
+          <img src="IMAGES/project2.png" alt="Project 2" loading="lazy" decoding="async">
           <div class="card-body">
-            <h5 class="card-title project-title" data-color="#111827">Recipe Finder App</h5>
-            <p class="card-text">A web app that lets users search recipes by ingredients they already have at home.</p>
+            <h5 class="card-title project-title" data-color="#111827">Animo Hotel Automated Reservation Transactions</h5>
+            <p class="card-text">It is an online reservation system for Animo Hotel. It stores users and reservations to be used by receptionists and managers.</p>
             <button type="button" class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#projectModal2">
               Details
             </button>
@@ -611,7 +612,7 @@ footer p{
       <!-- Project 3 -->
       <div class="col-md-4">
         <div class="card project-card">
-          <img src="https://placehold.co/600x400/e17055/ffffff?text=Project+Three" alt="Project Three">
+          <img src="https://placehold.co/600x400/e17055/ffffff?text=Project+Three" alt="Project " loading="lazy" decoding="async">
           <div class="card-body">
            <h5 class="card-title project-title" data-color="#1f2937">Personal Finance Tracker</h5>
             <p class="card-text">A budgeting tool that visualizes spending habits with interactive charts and graphs.</p>
@@ -708,13 +709,16 @@ footer p{
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Recipe Finder App</h5>
+        <h5 class="modal-title">Animo Hotel Automated Reservation Transactions</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
-        <img src="https://placehold.co/600x400/00b894/ffffff?text=Project+Two" class="img-fluid rounded mb-3" alt="Project Two">
-        <p><strong>Tech Stack:</strong> Vue.js, Spoonacular API, Firebase</p>
-        <p>Users enter ingredients they have on hand, and the app suggests matching recipes with instructions, prep time, and nutritional information. Includes saved favorites and a weekly meal planner.</p>
+        <img src="IMAGES/project2.png" class="img-fluid rounded mb-3">
+        <p><strong>Tools Used:</strong> Java, Draw.io, Java Standard Libraries (java.util, java.io, java.time, java.util.regex), Text Files (.txt)</p>
+        <p>Animo Hotel Automated Reservation Transactions (AHART) is a Java-based hotel reservation system designed to simplify and automate hotel bookings and transactions. It allows Clients to register, log in, and make reservations, while Receptionists and Managers can manage reservations, process check-ins, search records, and handle cancellations. The system stores user and reservation data in text files, making hotel operations more organized, efficient, and reliable.</p>
+        <p><strong>Goal:</strong><br>
+        The project aims to develop a reliable hotel reservation management system that automates booking transactions, guest registration, reservation monitoring, check-in processing, and cancellations. It is designed to improve efficiency, reduce manual errors, maintain organized reservation records, and provide hotel staff with an easier way to manage daily operations while offering guests a convenient reservation experience.
+        </p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-accent" data-bs-dismiss="modal">Close</button>
