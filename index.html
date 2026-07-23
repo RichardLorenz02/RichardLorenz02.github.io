@@ -585,7 +585,7 @@ footer p{
         <div class="card project-card">
           <img src="IMAGES/project1.png" alt="project1">
           <div class="card-body">
-            <h5 class="card-title project-title" data-color="#e6f0ff">Focus-Pon</h5>
+           <h5 class="card-title project-title" data-color="#050505">Focus-Pon</h5>
             <p class="card-text">It is a gamified productivity app combining a focus timer, task manager, and gacha rewards system.</p>
             <button type="button" class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#projectModal1">
               Details
@@ -599,7 +599,7 @@ footer p{
         <div class="card project-card">
           <img src="https://placehold.co/600x400/00b894/ffffff?text=Project+Two" alt="Project Two">
           <div class="card-body">
-            <h5 class="card-title project-title" data-color="#e6fff2">Recipe Finder App</h5>
+            <h5 class="card-title project-title" data-color="#111827">Recipe Finder App</h5>
             <p class="card-text">A web app that lets users search recipes by ingredients they already have at home.</p>
             <button type="button" class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#projectModal2">
               Details
@@ -613,7 +613,7 @@ footer p{
         <div class="card project-card">
           <img src="https://placehold.co/600x400/e17055/ffffff?text=Project+Three" alt="Project Three">
           <div class="card-body">
-            <h5 class="card-title project-title" data-color="#fff1e6">Personal Finance Tracker</h5>
+           <h5 class="card-title project-title" data-color="#1f2937">Personal Finance Tracker</h5>
             <p class="card-text">A budgeting tool that visualizes spending habits with interactive charts and graphs.</p>
             <button type="button" class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#projectModal3">
               Details
@@ -763,19 +763,29 @@ form.addEventListener("submit", function(e){
         this
     )
     .then(() => {
+    alert("Your message has been sent successfully!");
+    window.location.href = "thankyou.html";
 
-        window.location.href = "thankyou.html";
-
-    })
+})
     .catch((error) => {
-
         alert("Failed to send message.");
         console.error(error);
+    });
+
+});
+document.querySelectorAll(".project-title").forEach(title => {
+
+    title.style.cursor = "pointer";
+
+    title.addEventListener("click", function(){
+
+        document.body.style.backgroundColor = this.dataset.color;
 
     });
 
 });
 </script>
+
 
 </body>
 </html>
