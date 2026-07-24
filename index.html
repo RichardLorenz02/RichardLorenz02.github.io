@@ -31,7 +31,7 @@ html{
 
 body{
     font-family:'Manrope',sans-serif;
-    background:#050505;
+    background:#050505 url("IMAGES/background.jpg") center/cover no-repeat fixed;
     color:white;
     transition: background-color .5s ease;
 }
@@ -39,84 +39,51 @@ body{
 /* ================= NAVBAR ================= */
 
 .navbar{
-
     position: fixed;
-
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-
     width: 92%;
     max-width: 1350px;
-
     padding: 14px 30px;
-
     background: rgba(18,18,18,.78);
-
     border: 1px solid rgba(255,255,255,.08);
-
     border-radius: 24px;
-
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-
     box-shadow: 0 15px 40px rgba(0,0,0,.35);
-
     z-index: 9999;
-
 }
 
 .navbar-brand{
-
     color:#fff !important;
-
     font-size:2rem;
-
     font-weight:700;
-
     letter-spacing:-1px;
-
 }
 
 .nav-link{
-
     color:rgba(255,255,255,.75)!important;
-
     font-size:1rem;
-
     font-weight:600;
-
     margin-left:20px;
-
     transition:.3s;
-
 }
 
 .nav-link:hover{
-
     color:#fff !important;
-
 }
 
 .nav-link::after{
-
     display:none;
-
 }
+
 /* ================= HERO ================= */
 
 .hero{
-   background:
-linear-gradient(rgba(0,0,0,.58),rgba(0,0,0,.68)),
-url("IMAGES/background.jpg");
-}
-
-.hero::after{
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,.75),
-        rgba(0,0,0,.20)
-    );
+   position:relative;
+   background:rgba(0,0,0,.65);
+   min-height: 90vh;
 }
 
 .hero .container{
@@ -131,14 +98,9 @@ url("IMAGES/background.jpg");
     max-width: 95%;
     padding: 70px;
     text-align: center;
-
-    /* Almost invisible background */
     background: transparent;
-
     border: none;
-
     box-shadow: none;
-
     animation: fadeUp .8s ease;
 }
 
@@ -147,101 +109,60 @@ url("IMAGES/background.jpg");
     font-weight: 700;
     line-height: .95;
     letter-spacing: -3px;
-
+    text-align: center;
     color: #fff;
-
     text-shadow: 0 8px 30px rgba(0,0,0,.45);
-
+    margin-top: 60px;
     margin-bottom: 25px;
 }
 
 .glass-card p{
-
     max-width: 650px;
-
     margin: auto;
-
     margin-bottom: 35px;
-
     font-size: 1.1rem;
-
     color: rgba(255,255,255,.72);
-
     line-height: 1.8;
-
     text-shadow: 0 2px 12px rgba(0,0,0,.45);
-
 }
 
 .btn-accent{
-
     background: rgba(255,255,255,.06);
-
     color: white;
-
     border: 1px solid rgba(255,255,255,.18);
-
     border-radius: 16px;
-
     padding: 14px 30px;
-
     transition: .35s;
-
-    box-shadow:
-        0 0 20px rgba(255,255,255,.08);
-
+    box-shadow: 0 0 20px rgba(255,255,255,.08);
 }
 
 .btn-accent:hover{
-
     background: rgba(255,255,255,.12);
-
     color: white;
-
     transform: translateY(-3px);
-
-    box-shadow:
-        0 0 30px rgba(255,255,255,.18);
-
+    box-shadow: 0 0 30px rgba(255,255,255,.18);
 }
+
 /* ================= SECTION BADGE ================= */
 
 .section-badge{
-
     display:inline-block;
-
     padding:8px 18px;
-
     margin-bottom:18px;
-
     border-radius:999px;
-
     background:rgba(255,255,255,.06);
-
     border:1px solid rgba(255,255,255,.08);
-
     color:rgba(255,255,255,.70);
-
     font-size:.85rem;
-
     letter-spacing:.12em;
-
     text-transform:uppercase;
-
 }
+
 /* ================= PORTFOLIO ================= */
 
 #portfolio{
     padding:90px 0;
-
-   background:
-linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.72)),
-url("IMAGES/background.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
-    background-repeat: no-repeat;
+    background:rgba(0,0,0,.65);
 }
 
 .project-card{
@@ -257,12 +178,9 @@ url("IMAGES/background.jpg");
 }
 
 .project-card:hover{
-    transform:
-        translateY(-12px)
-        scale(1.02);
+    transform: translateY(-12px) scale(1.02);
     border-color:rgba(255,255,255,.16);
-    box-shadow:
-        0 30px 60px rgba(0,0,0,.35);
+    box-shadow: 0 30px 60px rgba(0,0,0,.35);
 }
 
 .project-card img{
@@ -280,87 +198,42 @@ url("IMAGES/background.jpg");
     color:white;
 }
 
-
 /* ================= CONTACT ================= */
 
 #contact{
     padding:90px 0;
-
-    background:
-linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
-url("IMAGES/background.jpg");
-
-    background-size:cover;
-    background-position:center;
+    background:rgba(0,0,0,.65);
 }
 
 .contact-form{
-
     max-width:700px;
     margin:auto;
     padding:50px;
-
     background:rgba(20,20,20,.82);
-
     border:1px solid rgba(255,255,255,.08);
-
     border-radius:28px;
-
     box-shadow:0 20px 60px rgba(0,0,0,.45);
-
 }
 
 .form-control{
-    background:#0f172a;
-    border:1px solid #334155;
-    color:white;
-}
-
-.form-control{
-
     background:rgba(255,255,255,.03);
-
     border:1px solid rgba(255,255,255,.08);
-
     color:#F5F5F5;
-
     border-radius:14px;
-
     padding:15px 18px;
-
 }
 
 .form-control:focus{
-
     background:rgba(255,255,255,.05);
-
     border-color:rgba(255,255,255,.20);
-
     color:white;
-
     box-shadow:none;
-
 }
 
 .form-control::placeholder{
-
     color:#8F8F8F;
-
 }
-/* ================= SECTION DIVIDER ================= */
 
-.section-divider{
-
-    height:1px;
-
-    background:linear-gradient(
-        to right,
-        transparent,
-        rgba(255,255,255,.10),
-        transparent
-    );
-
-}
 /* ================= FOOTER ================= */
 
 footer{
@@ -370,153 +243,105 @@ footer{
 }
 
 footer::before{
-
     content:"";
-
     position:absolute;
     inset:0;
-
     background:rgba(255,255,255,.02);
-
 }
 
 footer .container{
-
     position:relative;
     z-index:2;
-
 }
 
 footer p{
-
     margin:0;
-
     color:rgba(255,255,255,.70);
-
     font-size:.95rem;
-
     letter-spacing:.3px;
-
 }
 
 /* ================= ANIMATION ================= */
 
 @keyframes fadeUp{
-
     from{
         opacity:0;
         transform:translateY(30px);
     }
-
     to{
         opacity:1;
         transform:translateY(0);
     }
-
 }
+
 /* ================= TEXT VISIBILITY FIX ================= */
 
-/* Section Titles */
 h1, h2, h3, h4, h5, h6{
     color:#ffffff;
     font-weight:700;
 }
 
-/* Paragraphs */
 p{
     color:#e5e7eb;
 }
 
-/* Bootstrap muted text */
 .text-muted{
     color:#cbd5e1 !important;
 }
 
-/* Card Text */
 .card-text{
     color:#d1d5db;
 }
 
-/* Project Titles */
 .project-title{
     color:#ffffff;
 }
 
-/* Contact Section Labels */
 label{
-
     color:#FFFFFF;
-
     font-weight:600;
-
     margin-bottom:8px;
-
 }
 
-/* Input Text */
 .form-control{
     color:#ffffff;
 }
 
-/* Placeholder Text */
 .form-control::placeholder{
     color:#94a3b8;
 }
 
-/* Modal */
 .modal-content{
-
     background:rgba(18,18,18,.95);
-
     border:1px solid rgba(255,255,255,.08);
-
     border-radius:24px;
-
     color:white;
-
     box-shadow:0 20px 60px rgba(0,0,0,.45);
-
 }
 
 .modal-header,
 .modal-footer{
-
     border-color:rgba(255,255,255,.08);
-
     background:transparent;
-
 }
 
 .modal-body{
-
     color:rgba(255,255,255,.78);
-
 }
 
 .modal-title{
-
     color:white;
-
     font-weight:700;
-
 }
 
 .btn-close{
-
     filter:invert(1);
-
 }
+
 .modal-backdrop.show{
-
     opacity:.82;
-
-}
-/* Close Button */
-.btn-close{
-    filter: invert(1);
 }
 
-/* Portfolio & Contact Heading */
 #portfolio h2,
 #contact h2{
     font-size:3.4rem;
@@ -525,18 +350,17 @@ label{
     margin-bottom:18px;
 }
 
-/* Portfolio Description */
 #portfolio p,
 #contact p{
     color:#d1d5db;
 }
 
-/* Footer */
 footer p{
     color:#cbd5e1;
 }
 </style>
-
+</head>
+<body>
 
 <!-- ================= NAVBAR ================= -->
 <nav class="navbar navbar-expand-lg">
@@ -556,21 +380,21 @@ footer p{
 </nav>
 
 <!-- ================= HERO ================= -->
-<header id="home" class="hero text-center" style="margin-top:56px;">
-  <div class="container text-center">
+<header id="home" class="hero">
+  <div class="container h-100 d-flex justify-content-center align-items-center text-center">
     <div class="glass-card">
-    <div class="hero-badge">
-            BS Computer Science Student
-        </div>
-        <h1>Hi, I'm<br>Richard Lorenz Perez</h1>
-   <a href="#portfolio" class="btn btn-accent">
-            View My Work
-        </a>
+      <div class="hero-badge">
+        BS Computer Science Student
+      </div>
+      <h1>Hi, I'm<br>Richard Lorenz Perez</h1>
+      <a href="#portfolio" class="btn btn-accent">
+        View My Work
+      </a>
+    </div>
   </div>
 </header>
-<div class="section-divider"></div>
-<!-- ================= PORTFOLIO ================= -->
 
+<!-- ================= PORTFOLIO ================= -->
 <section id="portfolio">
   <div class="container">
     <h2 class="text-center mb-2">My Projects</h2>
@@ -586,7 +410,7 @@ footer p{
         <div class="card project-card">
           <img src="IMAGES/project1.png" alt="Project 1" loading="lazy" decoding="async">
           <div class="card-body">
-           <h5 class="card-title project-title" data-color="#050505">Focus-Pon</h5>
+           <h5 class="card-title project-title" data-color="rgba(0,0,0,0.4)">Focus-Pon</h5>
             <p class="card-text">It is a gamified productivity app combining a focus timer, task manager, and gacha rewards system.</p>
             <button type="button" class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#projectModal1">
               Details
@@ -598,9 +422,9 @@ footer p{
       <!-- Project 2 -->
       <div class="col-md-4">
         <div class="card project-card">
-          <img src="IMAGES/project2.png" alt="Project 2" loading="lazy" decoding="async">
+          <img src="IMAGES/project2.png" alt="Project Two">
           <div class="card-body">
-            <h5 class="card-title project-title" data-color="#111827">Animo Hotel Automated Reservation Transactions</h5>
+            <h5 class="card-title project-title" data-color="rgba(17,24,39,0.4)">Animo Hotel Automated Reservation Transactions</h5>
             <p class="card-text">It is an online reservation system for Animo Hotel. It stores users and reservations to be used by receptionists and managers.</p>
             <button type="button" class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#projectModal2">
               Details
@@ -612,9 +436,9 @@ footer p{
       <!-- Project 3 -->
       <div class="col-md-4">
         <div class="card project-card">
-          <img src="https://placehold.co/600x400/e17055/ffffff?text=Project+Three" alt="Project " loading="lazy" decoding="async">
+          <img src="https://placehold.co/600x400/e17055/ffffff?text=Project+Three" alt="Project Three">
           <div class="card-body">
-           <h5 class="card-title project-title" data-color="#1f2937">Personal Finance Tracker</h5>
+           <h5 class="card-title project-title" data-color="rgba(31,41,55,0.4)">Personal Finance Tracker</h5>
             <p class="card-text">A budgeting tool that visualizes spending habits with interactive charts and graphs.</p>
             <button type="button" class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#projectModal3">
               Details
@@ -626,7 +450,7 @@ footer p{
     </div>
   </div>
 </section>
-<div class="section-divider"></div>
+
 <!-- ================= CONTACT ================= -->
 <section id="contact">
   <div class="container">
@@ -660,7 +484,7 @@ footer p{
     </form>
   </div>
 </section>
-<div class="section-divider"></div>
+
 <!-- ================= FOOTER ================= -->
 <footer>
     <div class="container d-flex justify-content-between align-items-center flex-wrap">
@@ -777,13 +601,17 @@ form.addEventListener("submit", function(e){
     });
 
 });
+const portfolio = document.getElementById("portfolio");
+
 document.querySelectorAll(".project-title").forEach(title => {
 
     title.style.cursor = "pointer";
 
     title.addEventListener("click", function(){
 
-        document.body.style.backgroundColor = this.dataset.color;
+        portfolio.style.transition = "background 0.5s ease";
+
+        portfolio.style.background = this.dataset.color;
 
     });
 
